@@ -88,5 +88,5 @@ autocmd FileType python set autoindent smartindent cinwords=if,elif,else,for,whi
 " -------------------- C --------------------
 autocmd BufRead,BufNewFile *\.c\|*\.c_* set filetype=c
 autocmd FileType c set expandtab tabstop=4 shiftwidth=4 softtabstop=4
-autocmd FileType c set cindnet
+autocmd FileType c set cindent
 autocmd FileType c inoremap { {}<LEFT><CR><ESC><S-o>
