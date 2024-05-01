@@ -87,7 +87,6 @@ autocmd FileType python set autoindent smartindent cinwords=if,elif,else,for,whi
 
 " -------------------- C --------------------
 autocmd BufRead,BufNewFile *\.c\|*\.c_* set filetype=c
-""autocmd BufNewFile *\.c\|*\.c_* 0r ~/.vim/skeleton.c | 6 | normal! o | startinsert | execute "normal! \<TAB>"
 autocmd BufNewFile *\.c\|*\.c_* 0r ~/.vim/skeleton.c | 7
 autocmd FileType c set expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType c set cindent
