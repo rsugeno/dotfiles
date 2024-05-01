@@ -3,7 +3,7 @@ scriptencoding utf-8
 source /etc/vimrc
 
 
-" -------------------- Declaration --------------------
+" -------------------- Function --------------------
 let g:python_bin_dir = '~/python/bin'
 
 " flake8
@@ -66,6 +66,8 @@ nnoremap <Leader>i :call ExecuteIsort()<CR>
 nnoremap <Leader>p :call ExecutePytest()<CR>
 " grep def/class
 nnoremap <Leader>d !egrep -n 'class .*:\|def .*\(.*:' %
+" 行末にセミコロンを挿入
+nnoremap <Leader>; A;<ESC>
 
 " Visualize
 set listchars=tab:».,trail:_,nbsp:%
@@ -91,3 +93,4 @@ autocmd BufNewFile *\.c\|*\.c_* 0r ~/.vim/skeleton.c | 7
 autocmd FileType c set expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType c set cindent
 autocmd FileType c inoremap { {}<LEFT><CR><ESC><S-o>
+autocmd FileType c nnoremap <Leader>p oprintf("\n");<ESC>4hi
