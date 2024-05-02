@@ -95,4 +95,4 @@ autocmd FileType c inoremap { {}<LEFT><CR><ESC><S-o>
 " Leader-p で次の行に printf("\n"); を入力
 autocmd FileType c nnoremap <Leader>p oprintf("\n");<ESC>4hi
 " Leader-; で行末にセミコロンを入力
-autocmd FileType c nnoremap <Leader>; A;<ESC>
+autocmd FileType c nnoremap <Leader>; mqA;<ESC>`q
