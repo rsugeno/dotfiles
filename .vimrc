@@ -64,6 +64,8 @@ nnoremap <Leader>b :call ExecuteBlack()<CR>
 nnoremap <Leader>i :call ExecuteIsort()<CR>
 " pytest
 nnoremap <Leader>p :call ExecutePytest()<CR>
+" 行頭にタブを挿入
+nnoremap <Leader><TAB> mqI<TAB><ESC>`q
 
 " Visualize
 set listchars=tab:».,trail:_,nbsp:%
