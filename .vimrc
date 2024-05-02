@@ -64,10 +64,6 @@ nnoremap <Leader>b :call ExecuteBlack()<CR>
 nnoremap <Leader>i :call ExecuteIsort()<CR>
 " pytest
 nnoremap <Leader>p :call ExecutePytest()<CR>
-" grep def/class
-nnoremap <Leader>d !egrep -n 'class .*:\|def .*\(.*:' %
-" 行末にセミコロンを挿入
-nnoremap <Leader>; A;<ESC>
 
 " Visualize
 set listchars=tab:».,trail:_,nbsp:%
@@ -85,6 +81,8 @@ let g:netrw_preview=1
 autocmd BufRead,BufNewFile *\.py\|*\.py_* set filetype=python
 autocmd FileType python set expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType python set autoindent smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
+" Leader-d でclass宣言行またはdef宣言行の一覧と行番号を表示
+autocmd FileType python nnoremap <Leader>d !egrep -n 'class .*:\|def .*\(.*:' %
 
 
 " -------------------- C --------------------
@@ -92,5 +90,9 @@ autocmd BufRead,BufNewFile *\.c\|*\.c_* set filetype=c
 autocmd BufNewFile *\.c\|*\.c_* 0r ~/.vim/skeleton.c | 7
 autocmd FileType c set expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType c set cindent
+" '{' を入力すると自動で '}' も入力する
 autocmd FileType c inoremap { {}<LEFT><CR><ESC><S-o>
+" Leader-p で次の行に printf("\n"); を入力
 autocmd FileType c nnoremap <Leader>p oprintf("\n");<ESC>4hi
+" Leader-; で行末にセミコロンを入力
+autocmd FileType c nnoremap <Leader>; A;<ESC>
