@@ -45,10 +45,8 @@ inoremap ( ()<LEFT>
 inoremap [ []<LEFT>
 
 " バッファ切り替えのショートカット
-nnoremap <silent> [b :bprevious<CR>
-nnoremap <silent> ]b :bnext<CR>
-nnoremap <silent> [B :bfirst<CR>
-nnoremap <silent> ]B :blast<CR>
+nnoremap <silent> <C-j> :bprevious<CR>
+nnoremap <silent> <C-k> :bnext<CR>
 
 " ステータスライン
 set laststatus=2
@@ -84,7 +82,7 @@ autocmd BufRead,BufNewFile *\.py\|*\.py_* set filetype=python
 autocmd FileType python set expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType python set autoindent smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 " Leader-d でclass宣言行またはdef宣言行の一覧と行番号を表示
-autocmd FileType python nnoremap <Leader>d !egrep -n 'class .*:\|def .*\(.*:' %
+autocmd FileType python nnoremap <Leader>d :vimgrep 'class \\|def ' %<CR>:copen<CR>
 
 
 " -------------------- C --------------------
